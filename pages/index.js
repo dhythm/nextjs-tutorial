@@ -38,6 +38,7 @@ export default function Home({ allPostsData }) {
   );
 }
 
+// Fetch data at build time
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
   return {

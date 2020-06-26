@@ -21,6 +21,7 @@ export default function Post({ postData }) {
   );
 }
 
+// Specify dynamic routes to pre-render based on data
 export async function getStaticPaths() {
   const paths = getAllPostIds();
   return {
@@ -29,6 +30,7 @@ export async function getStaticPaths() {
   };
 }
 
+// Fetch data at build time
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
   return {
